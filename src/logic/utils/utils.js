@@ -8,3 +8,9 @@ export const query = async (url) => {
     return err;
   }
 }
+
+export const match = (str1, str2) => {
+  const text1 = str1.toLowerCase();
+  const text2 = str2.toLowerCase();
+  return text1.includes(text2);
+}

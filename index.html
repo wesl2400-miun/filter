@@ -1,14 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="./src/ui/assets/mittfavicon.svg">
     <link rel="stylesheet" href="./src/ui/css/root.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>filter</title>
+    <meta name="description" content="Frontend-baserad webbutveckling - Se lösning på Laboration 2. Sortering och filtrering med JavaScript.">
+    <title>Laboration 2 - Frontend-baserad webbutveckling</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <div class="logo">
+        <img height="140" width="260" src="./src/ui/assets/mittlogo.svg" alt="Mittuniveristetet - Logotyp">
+      </div>
+    </header>
+    <main>
+      <h1>Laboration 2</h1>
+      <section>
+        <h2>Webbutveckling - Ramschema</h2>
+        <form>
+          <label for="search">Sök:</legend>
+          <input id="search" name="search" type="text" placeholder="Sök efter kurskod eller kursnamn">
+        </form>
+        <div id="table"></div>
+      </section>
+    </main>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

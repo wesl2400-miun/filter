@@ -1,6 +1,6 @@
 import { Course } from "../model/Course.js";
 import { FIELD } from "../refs/field.js";
-import { query } from "../utils/utils.js";
+import { match, query } from "../utils/utils.js";
 
 export class Courses {
   constructor() {
@@ -26,20 +26,22 @@ export class Courses {
         return 1;
       else return 0;
     });
-    console.log('result', result);
-    console.log(this._cache)
+    return result;
   }
 
   filterBy = (input) => {
-    const result = this._cache
+    const result = [...this._cache]
       .filter((course) => {
-      if(course[FIELD.CODE]
-        .includes(input)
-        || course[FIELD.COURSENAME]
-        .includes(input))
+      const codeMatch = match(
+        course[FIELD.CODE], input);
+      const nameMatch = match(
+        course[FIELD.COURSENAME], 
+        input);
+      if(codeMatch || nameMatch)
         return course;
     });
-    console.log(result)
-    console.log(this._cache);
+    return result;
   }
+
+  get = () => this._cache;
 }
