@@ -40,7 +40,7 @@ jobs:
       - name: Build
       # Bygg projektet med Vite och lägg till '/autodep/' till bas-URL:en
       # Detta är superviktigt - annars hittas inte projektfilerna
-        run: npm run build -- --base /autodep/ 
+        run: npm run build -- --base /filter/ 
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
