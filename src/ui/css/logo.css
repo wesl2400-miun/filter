@@ -1,0 +1,13 @@
+
+/*
+* Stilmallen för logotypen
+*/
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 1px 5px var(--accent);
+  margin-bottom: 1.5rem;
+  border-radius: 0 0 10px 10px;
+}

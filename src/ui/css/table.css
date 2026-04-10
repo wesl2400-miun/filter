@@ -1,0 +1,36 @@
+
+/*
+* Stilmallen för tabellen
+*/
+
+#table {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid var(--accent);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+#table th {
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0.3rem 0;
+}
+
+
+.cells {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 0.5rem;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}

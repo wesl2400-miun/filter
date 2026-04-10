@@ -1,0 +1,93 @@
+/*
+* Återanvändabara färger och inställningar för typsnitt
+*/
+
+:root {
+  --primary: #394f93;
+  --primary-variant: #fff480;
+  --secondary: #293771;
+  --surface: #bdd3ff;
+  --background: white;
+  --text: #454545;
+  --accent: #868686;
+  --max-width: 600px;
+  font-size: 18px;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  color: var(--text);
+}
+
+body {
+  width: 100vw;
+  height: 100%;
+  background-color: var(--background);
+}
+
+
+/*
+* Anpassa layouten för följande behållare
+*/
+
+body,
+main,
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+header,
+main, 
+section, 
+h1, 
+h2, 
+input, 
+form {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+main {
+  width: 90%;
+  max-width: var(--max-width);
+  margin-bottom: 5rem;
+  gap: 0.3rem;
+}
+
+/*
+* Stilmallen för rubriker
+*/
+
+h1 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  line-height: 40px;
+  padding: 0 0.4rem;
+  margin: 0;
+  background-color: var(--primary-variant);
+  border-radius: 5px 0;
+}
+
+h2 {
+  font-size: 1.1rem;
+  padding: 0 0.4rem;
+  line-height: 40px;
+  color: var(--primary-variant);
+  background-color: var(--primary);
+  border-radius: 5px 0;
+  margin: 0;
+}
+
+/*
+* Stilmallen för datorer
+*/
+@media screen and (min-width: 500px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+}

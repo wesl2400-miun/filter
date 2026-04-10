@@ -2,11 +2,13 @@ import { Course } from "../model/Course.js";
 import { FIELD } from "../refs/field.js";
 import { match, query } from "../utils/utils.js";
 
+// Inkapslar logiken för appens kursfunktionalitet
 export class Courses {
   constructor() {
     this._cache = [];
   }
 
+  // Hämta kurser från en URL asynkront
   init = async (url) => {
     const result = await query(url);
     result.forEach(course => {
@@ -17,6 +19,7 @@ export class Courses {
     });
   }
 
+  // Sortera kurser efter kategori
   sortBy = (field) => {
     const result = [...this._cache]
       .sort((a, b) => {
@@ -29,6 +32,7 @@ export class Courses {
     return result;
   }
 
+  // Filtrera kurser efter en angiven sträng
   filterBy = (input) => {
     const result = [...this._cache]
       .filter((course) => {
@@ -43,5 +47,6 @@ export class Courses {
     return result;
   }
 
+  // Hämta den omodifierade listav av kurser
   get = () => this._cache;
 }

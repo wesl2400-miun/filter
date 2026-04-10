@@ -3,7 +3,9 @@ import { CONTENT } from "../data/content";
 import { STYLE } from "../refs/style";
 import { newNode } from "../utils.js/utils";
 
+// Vyn för tabellen
 export class CourTable {
+
   constructor(parent, 
     searchBar, courses) {
     const root = newNode('table', 
@@ -11,11 +13,12 @@ export class CourTable {
     this._courses = courses;
     this._initSearch(searchBar);
     this._addHeaders(root);
-    this._cells = newNode(
-      'div', null, null, root);
+    this._dataCells = newNode(
+      'div', null, STYLE.VHOLDER, root);
     this._update(this._courses.get());
   }
 
+  // Tilldela sökfältet en händelse
   _initSearch = (searchBar) => {
     searchBar.addEventListener('input', () => {
       const courses = 
@@ -25,30 +28,35 @@ export class CourTable {
     });
   }
 
+  // Uppdatera tabellens dataceller
   _update = (courses) => {
-    this._cells.innerHTML = '';
+    this._dataCells
+      .innerHTML = '';
     courses.forEach(
       course => {
       this._addCell(course);
     })
   }
 
+  // Lägg till en cell
   _addCell = (course) => {
     const cell = newNode('tr', 
-      null, null, this._cells);
+      null, STYLE.CELLS, 
+      this._dataCells);
     const { code, coursename, 
       progression } = course;
     newNode('td', code,
-       null, cell);
+       STYLE.CELL, cell);
     newNode('td', coursename, 
-      null, cell);
+      STYLE.CELL, cell);
     newNode('td', progression, 
-      null, cell);
+      STYLE.CELL, cell);
   }
 
+  // Lägg till rubriker
   _addHeaders = (root) => {
-    const headers = newNode(
-      'tr', null, null, root);
+    const headers = newNode('tr',
+      null, STYLE.CELLS, root);
     this._addHeader(headers, 
       CONTENT.TABLE.HEAD1,
       FIELD.CODE);
@@ -60,10 +68,11 @@ export class CourTable {
         FIELD.PROGRESSION);
   }
 
+  // Gör rubriker interaktiva
   _addHeader = (parent, 
     title, field) => {
     const header = newNode('th', 
-      title, null, parent);
+      title, STYLE.CELL, parent);
     header.addEventListener(
       'click', () => {
       const courses =

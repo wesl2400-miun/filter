@@ -1,4 +1,5 @@
 
+// Hårdkodat innehåll som visas i kurstabellen
 export const CONTENT = Object.freeze({
   TABLE: Object.freeze({
     HEAD1: 'Kurskod',

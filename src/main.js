@@ -4,13 +4,15 @@ import { NODE_ID } from "./ui/refs/node-id.js";
 import { CourTable } from "./ui/units/CourTable.js";
 import { node } from "./ui/utils.js/utils.js";
 
-
+// Hämta kurser från den angivna URL:en
 const courses = new Courses();
 await courses.init(URL.COURSES);
 
+// Hämta HTML-element efter referenser
 const table = node(NODE_ID.TABLE);
 const searchBar = node(NODE_ID.SEARCH);
 
+// Skapa tabellen
 new CourTable(table, searchBar, courses);
 
 

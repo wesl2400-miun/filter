@@ -1,4 +1,5 @@
 
+// Modellen för kursen
 export class Course {
   constructor(code, coursename, progression) {
     this.code = code;
