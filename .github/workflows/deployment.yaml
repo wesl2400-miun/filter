@@ -31,12 +31,12 @@ jobs:
         with:
           node-version: lts/*
           cache: 'npm'
-      - name: Clear cache
-      # Måste göras för att förebygga konflikter mellan cachade och nya filer
-        run: git push origin --delete gh-pages || true
       - name: Install dependencies
       # Installerar beroenden från package-lock.json
         run: npm ci
+      - name: Clear cache
+      # Måste göras för att förebygga konflikter mellan cachade och nya filer
+        run: git push origin --delete gh-pages || true
       - name: Build
       # Bygg projektet med Vite och lägg till '/autodep/' till bas-URL:en
       # Detta är superviktigt - annars hittas inte projektfilerna
